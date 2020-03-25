@@ -1,5 +1,4 @@
 const express = require('express');
-const crypto = require('crypto');
 
 const routes = express.Router();
 
@@ -8,12 +7,10 @@ const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
 
-routes.get('/', (req, resp) => {
-    return resp.json({
-        evento: "Semana OmniStack 11.0",
-        aluno: "Andre Luis Zipf"
-    });
-});
+routes.get('/', (req, resp) => resp.json({
+  evento: 'Semana OmniStack 11.0',
+  aluno: 'Andre Luis Zipf',
+}));
 
 routes.post('/ongs', ONGController.create);
 routes.get('/ongs', ONGController.index);
