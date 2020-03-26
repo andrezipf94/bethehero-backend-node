@@ -6,7 +6,7 @@ module.exports = {
     const { title, description, value } = req.body;
 
     const [id] = await connection('incidents').insert({
-      title, description, value, ongId,
+      title, description, value, ong_id: ongId,
     });
 
     resp.json({ id });
